@@ -7,9 +7,9 @@
     <ImageView
         android:id="@+id/ivFoto"
         android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:src="@drawable/mosquetera"
-        android:padding="5dp" />
+        android:padding="5dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,9 +18,9 @@
 
         <TextView
             android:id="@+id/tvNombre"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="left"
             android:padding="2dp"
             android:text="MOSQUETERA"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="6dp"
             android:text="Arena 4" />
     </LinearLayout>
 
