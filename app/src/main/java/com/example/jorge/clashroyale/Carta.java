@@ -1,6 +1,8 @@
 package com.example.jorge.clashroyale;
 
-public class Carta {
+import java.io.Serializable;
+
+public class Carta implements Serializable {
 
     private String nombre;
     private String calidad;
@@ -59,4 +61,11 @@ public class Carta {
         this.velocidad = velocidad;
     }
 
+    public int getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
+    }
 }
