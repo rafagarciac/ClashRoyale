@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 public class ListaCartasActivity extends AppCompatActivity {
 
     private ArrayList<Carta> listaCartas;
-    ListView lvCartas;
+    private ListView lvCartas;
+    private TextView tvCalidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class ListaCartasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_cartas);
         listaCartas = new ArrayList<Carta>();
         lvCartas = (ListView)findViewById(R.id.lvCartas);
+        tvCalidad = (TextView) findViewById(R.id.tvCalidad);
 
         // CREO OBJETOS
         Carta duendesLanza = new Carta("Duendes con lanza", "Normal", "Tropa", "Tres luchadores a distancia que atacan a pecho descubierto. ¿Quién narices decidió enseñar a estos tipos a arrojar lanzas? A ver, ¿En qué cabeza cabe que eso sea una buena idea?", "Muy alta", R.drawable.duendeslanza);
@@ -49,7 +52,7 @@ public class ListaCartasActivity extends AppCompatActivity {
 
         // RECOGO LA CALIDAD SELECCIONADA DE ListaEleccionActivity
         String calidad = getIntent().getExtras().getString("calidad");
-
+        tvCalidad.setText("CARTAS DE CALIDAD " + calidad.toUpperCase());
 
         // METO EN UN ARRAYLIST AUXILIAR LAS CARTAS QUE TENGAN LA CALIDAD ELEGIDA
         ArrayList<Carta> aux  = new ArrayList();
@@ -63,7 +66,6 @@ public class ListaCartasActivity extends AppCompatActivity {
         //Le meto el ArrayList Auxiliar
         AdaptadorSegundaLista myAdaptor = new AdaptadorSegundaLista(getApplicationContext(), aux);
         lvCartas.setAdapter(myAdaptor);
-
         lvCartas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
