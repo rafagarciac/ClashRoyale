@@ -25,7 +25,7 @@ public class ListaCartasActivity extends AppCompatActivity {
         // CREO OBJETOS
         Carta duendesLanza = new Carta("Duendes con lanza", "Normal", "Tropa", "Tres luchadores a distancia que atacan a pecho descubierto. ¿Quién narices decidió enseñar a estos tipos a arrojar lanzas? A ver, ¿En qué cabeza cabe que eso sea una buena idea?", "Muy alta", R.drawable.duendeslanza);
         Carta descarga = new Carta("Descarga", "Normal", "Hechizo", "La descarga inflige daño brevemente a los enemigos dentro de un radio de alcance reducido. Es menos efectiva contra las torres de coronas.", null, R.drawable.descarga);
-        Carta torreTesla = new Carta("Torre Tesla", "Normal", "Estructura", "Estructura defensiva. Si no hay ningún enemigo alrededor, prefiere resguardarse bajo tierra.", null, R.drawable.descarga);
+        Carta torreTesla = new Carta("Torre Tesla", "Normal", "Estructura", "Estructura defensiva. Si no hay ningún enemigo alrededor, prefiere resguardarse bajo tierra.", null, R.drawable.torretesla);
         Carta caballero = new Carta("Caballero", "Normal", "Tropa", "Un aguerrido luchador cuerpo a cuerpo, mucho más apuesto y culto que su primo lejano, el bárbaro. Se rumorea que el único motivo por el que fue nombrado caballero es la genialidad de su bigote.", "Media", R.drawable.caballero);
 
         Carta mosquetera = new Carta("Mosquetera", "Especial", "Tropa", "Que no te engañe su estupendo peinado de peluquería, porque la mosquetera no falla ni un tiro con su fiel trabuco.", "Media", R.drawable.mosquetera);
@@ -47,20 +47,21 @@ public class ListaCartasActivity extends AppCompatActivity {
         listaCartas.add(gigante); listaCartas.add(montapuercos); listaCartas.add(pekka); listaCartas.add(verdugo); listaCartas.add(veneno); listaCartas.add(bruja); listaCartas.add(magoElectrico);
         listaCartas.add(princesa); listaCartas.add(elTronco); listaCartas.add(bandida);
 
-        // cual de los dos???
-        String calidad = getIntent().getExtras().getString("Calidad").toLowerCase();
-        Bundle bundle = getIntent().getExtras();
+        // RECOGO LA CALIDAD SELECCIONADA DE ListaEleccionActivity
+        String calidad = getIntent().getExtras().getString("calidad");
 
-        /*
+
         // METO EN UN ARRAYLIST AUXILIAR LAS CARTAS QUE TENGAN LA CALIDAD ELEGIDA
         ArrayList<Carta> aux  = new ArrayList();
         for (Carta c : listaCartas) {
-            if (c.getCalidad().toLowerCase().equals(bundle.getString("Calidad"))) {
+            //Compara calidades y te saca en el ListView las cartas correspondientes
+            if (c.getCalidad().toLowerCase().equals(calidad.toLowerCase())) {
                 aux.add(c);
             }
         }
-*/
-        AdaptadorSegundaLista myAdaptor = new AdaptadorSegundaLista(getApplicationContext(), listaCartas);
+
+        //Le meto el ArrayList Auxiliar
+        AdaptadorSegundaLista myAdaptor = new AdaptadorSegundaLista(getApplicationContext(), aux);
         lvCartas.setAdapter(myAdaptor);
 
         lvCartas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
