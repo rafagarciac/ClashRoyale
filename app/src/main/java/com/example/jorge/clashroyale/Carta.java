@@ -9,16 +9,17 @@ public class Carta implements Serializable {
     private String tipo;
     private String descripcion;
     private String velocidad;
-    private int imagen;
+    private int imagen, imagenTabla;
 
 
-    public Carta(String nombre, String calidad, String tipo, String descripcion, String velocidad, int imagen) {
+    public Carta(String nombre, String calidad, String tipo, String descripcion, String velocidad, int imagen, int imagenTabla) {
         this.nombre = nombre;
         this.calidad = calidad;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.velocidad = velocidad;
         this.imagen = imagen;
+        this.imagenTabla = imagenTabla;
     }
 
     public String getNombre() {
@@ -67,5 +68,13 @@ public class Carta implements Serializable {
 
     public void setImagen(int imagen) {
         this.imagen = imagen;
+    }
+
+    public int getImagenTabla(){
+        return imagenTabla;
+    }
+
+    public void setImagenTabla(int imagenTabla) {
+        this.imagenTabla = imagenTabla;
     }
 }

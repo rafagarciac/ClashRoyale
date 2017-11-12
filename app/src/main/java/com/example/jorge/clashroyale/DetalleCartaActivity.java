@@ -20,7 +20,7 @@ public class DetalleCartaActivity extends AppCompatActivity {
 
     private int progreso;
     private TextView tvCalidad, tvTipo, tvVelocidad, nombre, descripcion;
-    private ImageView ivImagen;
+    private ImageView ivImagen, ivTabla;
     private ImageButton btnClashRoyale;
     private ProgressBar progressBar;
 
@@ -36,6 +36,7 @@ public class DetalleCartaActivity extends AppCompatActivity {
         nombre = (TextView) findViewById(R.id.tvNombre);
         descripcion = (TextView) findViewById(R.id.tvDescripcion);
         ivImagen = (ImageView) findViewById(R.id.ivImagen);
+        ivTabla = (ImageView) findViewById(R.id.ivTabla);
         btnClashRoyale = (ImageButton) findViewById(R.id.btnImage);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -58,6 +59,7 @@ public class DetalleCartaActivity extends AppCompatActivity {
             nombre.setShadowLayer(8, 8, 8, Color.rgb(240, 255, 23)); //COLOR LEGENCDARIO
         descripcion.setText(cartaDetalle.getDescripcion());
         ivImagen.setImageResource(cartaDetalle.getImagen());
+        ivTabla.setImageResource(cartaDetalle.getImagenTabla());
 
         //CLICK EN EL BOTON DE LA PARTE INFERIOR
         btnClashRoyale.setOnClickListener(new View.OnClickListener() {
@@ -94,18 +96,21 @@ public class DetalleCartaActivity extends AppCompatActivity {
                 if (intent != null) {
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
                 //SINO ABRE PLAYSTORE CON LA DIRECCION DE CLASH ROYALE
                 } else if (intent != null){
                     intent = new Intent(Intent.ACTION_VIEW);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.setData(Uri.parse("market://details?id=" + "com.supercell.clashroyale"));
                     startActivity(intent);
+                    overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
                 //POR ULTIMO SI EL DISPOSITIVO NO DISPONE DE PLAY STORE LE LLEVA A LA PAGINA WEB DE PLAY STORE (CLASH ROYALE)
                 //PARA SU DESCARGA
                 }else{
                     Uri urlPlayStore = Uri.parse("https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=es");
                     Intent intent3 = new Intent(Intent.ACTION_VIEW, urlPlayStore );
                     startActivity(intent3);
+                    overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
                 }
             }
 

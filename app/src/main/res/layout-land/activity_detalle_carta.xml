@@ -15,38 +15,9 @@
 
         <ImageView
             android:id="@+id/ivImagen"
-            android:layout_width="175dp"
-            android:layout_height="234dp"
-            app:srcCompat="@drawable/verdugo" />
-
-        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="237dp"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-            <ImageView
-                android:id="@+id/ivCalidad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.39"
-                app:srcCompat="@mipmap/calidad_detalle" />
-
-            <ImageView
-                android:id="@+id/ivTipo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.30"
-                app:srcCompat="@mipmap/tipo_detalle" />
-
-            <ImageView
-                android:id="@+id/ivVelocidad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.31"
-                app:srcCompat="@mipmap/velocidad_detalle" />
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/verdugo" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,43 +25,12 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-            <TextView
-                android:id="@+id/tvCalidad"
+            <ImageView
+                android:id="@+id/ivTabla"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.34"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="CALIDAD"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvTipo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.32"
-                android:fontFamily="cursive"
-                android:gravity="center"
-                android:text="TIPO"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:typeface="normal" />
-
-            <TextView
-                android:id="@+id/tvVelocidad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.34"
-                android:fontFamily="sans-serif-condensed"
-                android:gravity="center"
-                android:text="VELOCIDAD"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
-
+                android:paddingTop="10dp"
+                app:srcCompat="@drawable/verdugo_tabla" />
         </LinearLayout>
 
     </LinearLayout>
@@ -100,16 +40,53 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/tvCalidad"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_weight="0.34"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="CALIDAD"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.32"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:text="TIPO"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/tvVelocidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.34"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="VELOCIDAD"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
         <LinearLayout
             android:layout_width="223dp"
-            android:layout_height="64dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="1">
 
             <TextView
                 android:id="@+id/tvNombre"
                 android:layout_width="223dp"
-                android:layout_height="64dp"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Nombre"
                 android:textAlignment="center"
@@ -136,13 +113,6 @@
                 android:layout_marginRight="12dp"
                 android:textSize="18sp"
                 android:textStyle="italic" />
-
-            <ImageView
-                android:id="@+id/ivTabla"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/verdugo_tabla" />
         </LinearLayout>
 
         <LinearLayout
@@ -169,7 +139,6 @@
                 android:layout_marginLeft="100dp"
                 android:layout_weight="0.55"
                 app:srcCompat="@mipmap/btncr_detalle" />
-
         </LinearLayout>
 
     </LinearLayout>

@@ -41,6 +41,8 @@ public class ListaEleccionActivity extends AppCompatActivity {
                 Intent e = new Intent(getApplicationContext(), ListaCartasActivity.class);
                 e.putExtra("calidad", calidad);
                 startActivity(e);
+                //TRANSICION PONER DESPUES DEL START
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
             }
         });
     }
