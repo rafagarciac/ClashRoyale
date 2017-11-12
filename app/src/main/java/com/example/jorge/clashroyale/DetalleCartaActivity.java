@@ -1,6 +1,7 @@
 package com.example.jorge.clashroyale;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.example.jorge.clashroyale.PantallaCargaActivity.fontClashRoyale;
 
 public class DetalleCartaActivity extends AppCompatActivity {
 
@@ -44,6 +47,15 @@ public class DetalleCartaActivity extends AppCompatActivity {
         tvTipo.setText(cartaDetalle.getTipo());
         tvVelocidad.setText(cartaDetalle.getVelocidad());
         nombre.setText(cartaDetalle.getNombre());
+        nombre.setTypeface(fontClashRoyale);
+        if(tvCalidad.getText().toString().toLowerCase().equals("normal"))
+            nombre.setShadowLayer(11, 11, 11, Color.BLACK);
+        else if(tvCalidad.getText().toString().toLowerCase().equals("especial"))
+            nombre.setShadowLayer(11, 11, 11, Color.rgb(253, 158, 34)); //COLOR NARANJA
+        else if(tvCalidad.getText().toString().toLowerCase().equals("epica"))
+            nombre.setShadowLayer(11, 11, 11, Color.rgb(255, 51, 252)); //COLOR VIOLETA
+        else if(tvCalidad.getText().toString().toLowerCase().equals("legendaria"))
+            nombre.setShadowLayer(8, 8, 8, Color.rgb(240, 255, 23)); //COLOR LEGENCDARIO
         descripcion.setText(cartaDetalle.getDescripcion());
         ivImagen.setImageResource(cartaDetalle.getImagen());
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">"Clash Royale "</string>
+    <string name="elegir"> ELIGE UNA CALIDAD DE CARTA </string>
+    <string name="calidad"> CARTAS DE CALIDAD</string>
 </resources>

@@ -52,7 +52,7 @@ public class AdaptadorSegundaLista extends BaseAdapter {
             tvNombre.setTextColor(Color.BLACK);
         }
         if (listCartas.get(i).getCalidad().equalsIgnoreCase("especial")) {
-            tvNombre.setTextColor(Color.rgb(251, 203, 26));
+            tvNombre.setTextColor(Color.rgb(253, 158, 34));
         }
         if (listCartas.get(i).getCalidad().equalsIgnoreCase("epica")) {
             tvNombre.setTextColor(Color.rgb(255, 51, 252));

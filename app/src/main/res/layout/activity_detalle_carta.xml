@@ -114,7 +114,8 @@
                 android:text="Nombre"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textSize="30sp"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
