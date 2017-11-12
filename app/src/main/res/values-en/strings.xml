@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">"Clash Royale "</string>
+    <string name="elegir"> CHOOSE A PLAYING CARD QUALITY </string>
+    <string name="calidad"> QUALITY PLAYING CARD</string>
+</resources>
