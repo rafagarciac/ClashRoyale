@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import static com.example.jorge.clashroyale.PantallaCargaActivity.fontClashRoyale;
+
 public class ListaCartasActivity extends AppCompatActivity {
 
     private ArrayList<Carta> listaCartas;
@@ -24,6 +26,7 @@ public class ListaCartasActivity extends AppCompatActivity {
         listaCartas = new ArrayList<Carta>();
         lvCartas = (ListView)findViewById(R.id.lvCartas);
         tvCalidad = (TextView) findViewById(R.id.tvCalidad);
+        tvCalidad.setTypeface(fontClashRoyale);
 
         // CREO OBJETOS
         Carta duendesLanza = new Carta("Duendes con lanza", "Normal", "Tropa", "Tres luchadores a distancia que atacan a pecho descubierto. ¿Quién narices decidió enseñar a estos tipos a arrojar lanzas? A ver, ¿En qué cabeza cabe que eso sea una buena idea?", "Muy alta", R.drawable.duendeslanza);

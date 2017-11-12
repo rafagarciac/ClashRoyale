@@ -1,6 +1,7 @@
 package com.example.jorge.clashroyale;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ public class PantallaCargaActivity extends AppCompatActivity {
     private TextView tvProgreso;
     private ImageView ivFoto;
     private int progreso;
+    //Creacion de Fuente
+    static Typeface fontClashRoyale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,13 @@ public class PantallaCargaActivity extends AppCompatActivity {
         ivFoto = (ImageView) findViewById(R.id.ivFoto);
         ivFoto.setImageResource(R.drawable.pantallacarga);
         //progreso = 0;
+
+
+        //TRATAMIENTO PARA PONER UNA FUENTE DE LETRA PROPIA
+        //Mirar el tipo de fuente! TrueType --> ttf; OpenType --> otf
+        String fuente = "fuentes/FontClashRoyale.ttf";
+        this.fontClashRoyale = Typeface.createFromAsset(getAssets(), fuente);
+        //HAY QUE PONER LA LETRA EN EJECUCION!!
 
         new Thread(miHilo).start();
     }
